@@ -9,6 +9,11 @@ class TestGetHumanAge:
         "input_values,output_values",
         [
             pytest.param(
+                (0, 0),
+                [0, 0],
+                id="should return 0 when age 0"
+            ),
+            pytest.param(
                 (14, 14),
                 [0, 0],
                 id="should return 0 when age under 15"
@@ -56,7 +61,7 @@ class TestGetHumanAge:
         "input_values,error",
         [
             pytest.param(
-                (-4, 5),
+                (-4, 0),
                 ValueError,
                 id="should raise ValueError when value less than 0"
             ),

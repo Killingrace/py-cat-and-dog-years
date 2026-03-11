@@ -29,6 +29,16 @@ class TestGetHumanAge:
                 id="should return 2 when age equal 24"
             ),
             pytest.param(
+                (27, 27),
+                [2, 2],
+                id="should return 2 when age equal to 27 on cat and dogs edges"
+            ),
+            pytest.param(
+                (28, 28),
+                [3, 2],
+                id="should return different values for threshold values"
+            ),
+            pytest.param(
                 (100, 100),
                 [21, 17],
                 id="should return correct values for complex input above 24"
@@ -46,7 +56,7 @@ class TestGetHumanAge:
         "input_values,error",
         [
             pytest.param(
-                (0, -1),
+                (-4, 5),
                 ValueError,
                 id="should raise ValueError when value less than 0"
             ),

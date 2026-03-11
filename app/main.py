@@ -1,9 +1,10 @@
 def get_human_age(cat_age: int, dog_age: int) -> list:
-    if not (0 < cat_age < 120 or 0 < dog_age < 120) :
-        raise ValueError
 
     if not isinstance(cat_age, int) or not isinstance(dog_age, int):
         raise TypeError
+
+    if cat_age < 0 or dog_age < 0:
+        raise ValueError
 
     return [convert_age(cat_age, 4), convert_age(dog_age, 5)]
 
